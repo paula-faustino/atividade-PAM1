@@ -1,14 +1,17 @@
-import CustomButton from "@/components/CustomButton";
-import React, { useState } from "react";
-import { Text, View, Button } from "react-native";
+import React from "react";
+import{ useState } from "react-router";
+import { Button, Text, View} from "react-native";
+import { useRouter } from "expo-router";
 
 export default function HomeScreen(){
-    const START_VALUES=0
-    const [count, setCount] = useState(0);
+    const router = useRouter();
     return(
-        <View style ={{ backgroundColor: 'blue'}}>
-            <Text>{count}</Text>
-               <CustomButton title="Teate"></CustomButton>
+        <View>
+            <Text> teste </Text>
+            <Button
+            title="Ir para Tela 2"
+             onPress={() => router.push("/tela2")}></Button>
+              
         </View>
     );
 } 
