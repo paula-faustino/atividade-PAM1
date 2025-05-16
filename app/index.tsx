@@ -1,17 +1,19 @@
-import React from "react";
-import{ useState } from "react-router";
-import { Button, Text, View} from "react-native";
 import { useRouter } from "expo-router";
+import { Button, View } from "react-native";
 
-export default function HomeScreen(){
+export default function HomeScreen() {
     const router = useRouter();
-    return(
+    return (
         <View>
-            <Text> teste </Text>
+            <Button 
+            title="stack navigation"
+            onPress={() => router.push("/navigation/stack")}/>
+            <Button 
+            title="tabs navigation"
+            onPress={() => router.push("/navigation/tabs")}/>
             <Button
-            title="Ir para Tela 2"
-             onPress={() => router.push("/tela2")}></Button>
-              
+            title="drawer navigation"
+            onPress={() => router.push("/navigation/drawer")}/>
         </View>
     );
-} 
+}
